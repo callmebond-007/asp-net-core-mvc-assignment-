@@ -1,14 +1,15 @@
-﻿using System;
+﻿using MobileAPPMVC.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace MobileAPPMVC.Repository
 {
-    interface IManufacturerRepository
+    public interface IManufacturerRepository
     {
-        List<Manufcturer> GetAllManufacturers();
+         List<Manufacturer> GetAllManufacturers();
     }
 
 }
-}
+

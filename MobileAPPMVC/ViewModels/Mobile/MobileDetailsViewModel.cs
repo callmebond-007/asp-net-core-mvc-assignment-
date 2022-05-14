@@ -7,5 +7,14 @@ namespace MobileAPPMVC.ViewModels.Mobile
 {
     public class MobileDetailsViewModel
     {
+        public int Id { get; set; }
+
+        public string MobileName { get; set; }
+
+        public double MobileAmount { get; set; }
+
+        public string ManufacturerName { get; set; }
+
+
     }
 }

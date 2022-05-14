@@ -63,10 +63,10 @@ namespace MobileAPPMVC.Repository
             {
                 existingMobile.MobileName = mobile.MobileName;
                 existingMobile.MobileAmount = mobile.MobileAmount;
-                existingMobile.ManufacturerId = mobile.ManufacturerId ;
+                existingMobile.ManufacturerId = mobile.ManufacturerId;
                 _mobileDbContext.SaveChanges();
             }
-            
+
         }
 
     }

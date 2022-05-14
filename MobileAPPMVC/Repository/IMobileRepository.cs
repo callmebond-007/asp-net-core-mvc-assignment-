@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MobileAPPMVC.Repository
 {
-    interface IMobileRepository
+    public interface IMobileRepository
     {
         List<Mobile> GetAllMobiles();
 

@@ -5,7 +5,8 @@ using System.Threading.Tasks;
 
 namespace MobileAPPMVC.ViewModels.Mobile
 {
-    public class UpdateMobileViewModel
+    public class UpdateMobileViewModel : AddMobileViewModel
     {
+        public int Id { get; set; }
     }
 }

@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace MobileAPPMVC.ViewModels.Mobile
 {
-    public class DeleteMobileViewModel
+    public class DeleteMobileViewModel : MobileDetailsViewModel
     {
     }
 }

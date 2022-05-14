@@ -1,8 +1,11 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using MobileAPPMVC.MDBContext;
+using MobileAPPMVC.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,7 +29,7 @@ namespace MobileAPPMVC
             string connectionString = Configuration.GetConnectionString("MobileConnectionString");
             services.AddDbContext<MobileDbContext>(options => options.UseSqlServer(connectionString));
             services.AddTransient<IMobileRepository, MobileRepository>();
-            services.AddTransient<ImanufacturerRepository, ManufacturerRepository>();
+            services.AddTransient<IManufacturerRepository, ManufacturerRepository>();
 
 
         }
@@ -40,7 +43,7 @@ namespace MobileAPPMVC
             }
             else
             {
-                app.UseExceptionHandler("/Home/Error");
+                app.UseExceptionHandler("/Error");
             }
             app.UseStaticFiles();
 
@@ -52,7 +55,7 @@ namespace MobileAPPMVC
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Mobile}/{action=Index}/{id?}");
             });
         }
     }

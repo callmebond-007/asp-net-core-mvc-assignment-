@@ -1,0 +1,48 @@
+﻿@model IEnumerable<MobileDetailsViewModel>
+
+
+<h1>Mobile List</h1>
+<hr />
+
+<table class="table">
+    <thead>
+        <tr>
+            <td>Id</td>
+            <td>MobileName</td>
+            <td>MobileAmount</td>
+            <td>Manufacturer</td>
+        </tr>
+    </thead>
+    <tbody>
+
+        @if (Model.Count() == 0)
+        {
+            <tr>
+
+                <td colspan="4"> No Records Found!!!</td>
+
+            </tr>
+        }
+        else
+        {
+            @foreach (var mobile in Model)
+            {
+                <tr>
+                    <td>@mobile.Id</td>
+                    <td>@mobile.MobileName</td>
+                    <td>@mobile.MobileAmount</td>
+                    <td>@mobile.ManufacturerName</td>
+                    <td>
+                        <a asp-controller="Mobile" asp-action="UpdateMobile" asp-route-id="@mobile.Id">Edit</a>
+                    </td>
+                    <td>
+                        <a asp-controller="Mobile" asp-action="DeleteMobile" asp-route-id="@mobile.Id">Delete</a>
+                    </td>
+
+                </tr>
+            }
+        }
+    </tbody>
+
+</table>
+
