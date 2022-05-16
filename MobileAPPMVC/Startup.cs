@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -27,6 +28,8 @@ namespace MobileAPPMVC
         {
             services.AddControllersWithViews();
             string connectionString = Configuration.GetConnectionString("MobileConnectionString");
+            services.AddIdentity<IdentityUser, IdentityRole>()
+                    .AddEntityFrameworkStores<MobileDbContext>();
             services.AddDbContext<MobileDbContext>(options => options.UseSqlServer(connectionString));
             services.AddTransient<IMobileRepository, MobileRepository>();
             services.AddTransient<IManufacturerRepository, ManufacturerRepository>();
@@ -46,6 +49,8 @@ namespace MobileAPPMVC
                 app.UseExceptionHandler("/Error");
             }
             app.UseStaticFiles();
+
+            app.UseAuthentication();
 
             app.UseRouting();
 

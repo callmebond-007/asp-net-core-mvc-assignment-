@@ -1,4 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using MobileAPPMVC.Models;
 using System;
 using System.Collections.Generic;
@@ -7,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace MobileAPPMVC.MDBContext
 {
-    public class MobileDbContext : DbContext
+    public class MobileDbContext : IdentityDbContext<IdentityUser>
     {
         public MobileDbContext(DbContextOptions<MobileDbContext>options) : base(options)
         {

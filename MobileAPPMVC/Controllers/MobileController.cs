@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using MobileAPPMVC.Models;
 using MobileAPPMVC.Repository;
@@ -10,6 +11,7 @@ using System.Threading.Tasks;
 
 namespace MobileAPPMVC.Controllers
 {
+    [Authorize]
     public class MobileController : Controller
     {
         IMobileRepository _mobileRepository;
